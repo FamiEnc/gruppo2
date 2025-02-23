@@ -153,8 +153,10 @@
     <div class="top-bar" role="navigation"> <!-- Modifica: Aggiunto ruolo per accessibilità -->
         <img src="logo.png" alt="Logo"> <!-- Aggiunta del logo -->
         <span>Famiglia Encicliati</span> <!-- Slogan o titolo -->
-        <a href="https://famienc.github.io/gruppo1/" target="_blank">gruppo1</a>
-        <a href="https://famienc.github.io/gruppo2/" target="_blank">gruppo2</a>
+
+        <a href="https://famienc.github.io/gruppo1/" target="_blank" onclick="stopAllAudio()">gruppo1</a>
+        <a href="https://famienc.github.io/gruppo2/" target="_blank" onclick="stopAllAudio()">gruppo2</a>		
+		
         <!--    <a href="https://www.instagram.com/prima_il_veneto/" target="_blank">Instagram</a>     -->
 		<a href="video.html" target="_blank">Video</a>
 
@@ -241,6 +243,14 @@
     </div>
 
     <script>
+	
+	    function stopAllAudio() {
+            document.querySelectorAll('audio').forEach(audio => {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+        }
+		
         const sections = document.querySelectorAll('section');
         const slides = document.querySelector('.slides');
         const audios = document.querySelectorAll('audio');
